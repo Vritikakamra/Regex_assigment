@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html>
+<head>
+<script>
+	function validate(){
+if(document.myForm.calls.value == "" ){
+alert( "Please provide your number of calls!" );
+document.myForm.Name.focus() ;
+return false;
+}
+
+if(document.myForm.sms.value == "-1" ){
+alert( "Please provide your sms count!" );
+return false;
+}
+var total1 = "";
+var totalbill = "";
+if(document.myForm.calls.value == "50" && document.myForm.sms.value=="50" ){
+totalbill=0
+alert( "your bill is "+totalbill );
+document.myForm.Name.focus() ;
+return false;
+}
+else if(document.myForm.calls.value <= "150" && document.myForm.sms.value<="200"){
+	totalbill=document.myForm.calls.value *70/60 +document.myForm.sms.value*25/60
+	alert("your bill is "+totalbill)
+}
+else if(document.myForm.calls.value <= "300" && document.myForm.sms.value<="400"){
+	totalbill=document.myForm.calls.value *85/60 +document.myForm.sms.value*40/60
+	alert("your bill is "+totalbill)
+
+}
+else{
+	totalbill=document.myForm.calls.value *95/60 +document.myForm.sms.value*45/60
+	alert("your bill is "+totalbill)
+
+}
+
+
+    
+
+
+return(true);
+}
+</script>
+</head>
+<body>
+	<form action="" name="myForm"
+onsubmit="return(validate());">
+<table cellspacing="2" cellpadding="2" border="1">
+<tr>
+<td align="right">enter number of calls</td>
+<td><input type="text" name="calls" /></td>
+</tr>
+<tr>
+<td align="right">enter number of sms</td>
+<td><input type="text" name="sms" /></td>
+</tr>
+<tr>
+<td align="right"></td>
+<td><input type="submit" value="Submit" /></td>
+</tr>
+</table>
+</form>
+
+
+
+</body>
+</html>

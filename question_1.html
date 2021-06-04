@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+<body>
+
+<p>click the button to replace value with price</p>
+
+<p id="demo">value has a value only if it is valued</p>
+
+<button onclick="myFunction()">Try it</button>
+
+<script>
+function myFunction() {
+  var str = document.getElementById("demo").innerHTML; 
+  var n= str.search("value");
+  var res = str.replace("value", "price");
+  document.getElementById("demo").innerHTML = res;
+}
+</script>
+
+</body>
+</html>
